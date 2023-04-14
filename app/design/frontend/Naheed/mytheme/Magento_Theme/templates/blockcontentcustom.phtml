@@ -1,0 +1,35 @@
+
+To create a .phtml file in a child theme in Magento, follow these steps:
+
+Create a new directory in your child theme named Magento_Theme. This directory will be used to store all of your theme-related files.
+
+Inside the Magento_Theme directory, create a new directory named templates. This directory will be used to store all of your .phtml files.
+
+Create your .phtml file inside the templates directory.
+
+Your .phtml file should contain the HTML and PHP code that you want to display on the frontend of your Magento store.
+
+Once you have created your .phtml file, you can reference it in your layout XML files using the following syntax:
+<code>
+<block class='Magento\Framework\View\Element\Template' name='block_name' template='Magento_Theme::templates/file_name.phtml' />
+</code>
+
+Replace block_name with the name of your block and file_name.phtml with the name of your .phtml file.
+
+<i>i used the following code in my file</i>   
+<code>
+<block class='Magento\Framework\View\Element\Template' name='block_name' template='Naheed_Mytheme::templates/file_name.phtml' />
+</code>
+
+Save your changes and clear the Magento cache.
+Your .phtml file should now be displayed on the frontend of your Magento store.
+
+You can put the block in the desired location in your Magento project's XML layout files. Here are some common locations to consider:
+
+Custom theme layout file: If you have created a custom theme in Magento, you can add the block to your theme's layout file located at app/design/frontend/Naheed/mytheme/Magento_Theme/layout/default.xml.
+
+Custom module layout file: If you have created a custom module in Magento, you can add the block to your module's layout file located at app/code/Naheed/MyModule/view/frontend/layout/my_layout.xml.
+
+CMS page or block: If you want to add the block to a specific CMS page or block, you can do so by editing the CMS page or block and adding the block using the "Layout Update XML" field in the "Design" tab.
+
+Keep in mind that the specific location to add the block will depend on your project's structure and requirements.

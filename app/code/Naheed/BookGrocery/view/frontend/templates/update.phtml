@@ -1,0 +1,12 @@
+<?php
+
+/** @var \Naheed\BookGrocery\Block\BookGrocery $block */ ?>
+
+<form id="bookgrocery-form" method="post" action="<?= $block->escapeUrl($block->getUpdateAction()) ?>" enctype="multipart/form-data" data-mage-init='{"validation":{}}'>
+    <input type="hidden" name="id" value="<?= $block->escapeHtmlAttr($block->getId()) ?>">
+    <div class="field name required">
+        <label for="name" class="label"><span><?= $block->escapeHtml(__('Name')) ?></span></label>
+        <div class="control">
+        </div>
+    </div>
+</form>

@@ -1,0 +1,13 @@
+{
+    "overrides": [
+      {
+        "files": ["*.php","*.phtml"],
+        "options": {
+          "parser": "php",
+          "trailingComma": "none",
+          "singleQuote": false,
+          "tabWidth": 4
+        }
+      }
+    ]
+  }

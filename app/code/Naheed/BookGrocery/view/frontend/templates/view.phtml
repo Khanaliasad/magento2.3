@@ -1,0 +1,30 @@
+<?php
+/**
+ * @var $block Naheed\BookGrocery\Block\View
+ */
+?>
+<h1>Book List</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Products</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($block->getBooks() as $book): ?>
+            <tr>
+                <td><?= $book->getId() ?></td>
+                <td><?= $block->escapeHtml($book->getName()) ?></td>
+                <td><?= $block->escapeHtml($book->getEmail()) ?></td>
+                <td><?= $block->escapeHtml($book->getPhone()) ?></td>
+                <td><?= $block->escapeHtml($book->getProducts()) ?></td>
+                <td><a href="<?= $block->getUrl('naheed1/update', ['id' => $book->getId()]) ?>">Edit</a></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>

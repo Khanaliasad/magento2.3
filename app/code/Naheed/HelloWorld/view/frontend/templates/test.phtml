@@ -1,0 +1,30 @@
+<div>
+    <h1>Hello World!</h1>
+    <p>This is an example of using a phtml file in your controller.</p>
+  <ul class="your-class">
+<?php 
+
+    // get current store's categories
+    $categories = $block->getStoreCategories();
+    foreach ($categories as $category) {
+    ?>
+        <li><a href="<?php echo $category->getUrl(); ?>"><?php echo $category->getName() ; ?></a></li>
+        <br>
+    <?php
+    }
+    ?>
+</ul>
+
+<ul>
+<?php
+$productCollection = $block->getProductCollection();
+foreach ($productCollection as $product) {
+?>
+    <li><a href="<?php echo $product->getProductUrl(); ?>"><?php echo $product->getName(); ?></a></li>    
+    <br>
+<?php
+}
+?>
+</ul>
+
+</div>

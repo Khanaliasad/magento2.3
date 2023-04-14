@@ -1,0 +1,112 @@
+<div>
+    <h1>Hello World!</h1>
+    <p>This is an example of using a phtml file in your controller.</p>
+    <?php
+if($block->getCustomerInfo()['email']){
+
+?>
+    <div>
+        <h1>Welcome <?php echo $block->getCustomerInfo()['name']; ?></h1>
+        <p>Your email address is: <?php echo $block->getCustomerInfo()['email']; ?></p>
+    </div>
+
+
+    <?php
+}
+    ?>
+
+    <ul class="your-class">
+        <?php 
+
+    // get current store's categories
+    $categories = $block->getStoreCategories();
+    // foreach ($categories as $category) {
+    ?>
+        <li><a href=""></a></a></li>
+        <br>
+        <?php
+
+        // }
+        ?>
+
+    </ul>
+
+    <ul>
+        <?php
+$productCollection = $block->getProductCollection();
+echo $productCollection;
+if (is_array($productCollection) || is_object($productCollection))
+{
+foreach ($productCollection as $product) {
+?>
+        <li><a href="<?php echo $product->getProductUrl(); ?>"><?php echo $product->getName(); ?></a></li>
+        <br>
+        <?php
+}}
+?>
+    </ul>
+
+</div>
+<form id="bookgrocery-form" method="post" action="<?= $block->escapeUrl($block->getAction()) ?>" enctype="multipart/form-data" data-mage-init='{"validation":{}}'>
+    <div class="field name required">
+        <label for="name" class="label"><span><?= $block->escapeHtml(__('Name')) ?></span></label>
+        <div class="control">
+            <input type="text" name="name" id="name" title="<?= $block->escapeHtmlAttr(__('Name')) ?>" class="input-text" data-validate="{required:true}" placeholder="<?= $block->escapeHtml(__('Your name')) ?>">
+        </div>
+    </div>
+    <div class="field email required">
+        <label for="email" class="label"><span><?= $block->escapeHtml(__('Email')) ?></span></label>
+        <div class="control">
+            <input type="email" name="email" id="email" title="<?= $block->escapeHtmlAttr(__('Email')) ?>" class="input-text" data-validate="{required:true, 'validate-email':true}" placeholder="<?= $block->escapeHtml(__('Your email address')) ?>">
+        </div>
+    </div>
+    <div class="field phone required">
+        <label for="phone" class="label"><span><?= $block->escapeHtml(__('Phone')) ?></span></label>
+        <div class="control">
+            <input type="text" name="phone" id="phone" title="<?= $block->escapeHtmlAttr(__('Phone')) ?>" class="input-text" data-validate="{required:true}" placeholder="<?= $block->escapeHtml(__('Your phone number')) ?>">
+        </div>
+    </div>
+    <div class="field having">
+        <label for="having" class="label"><span><?= $block->escapeHtml(__('Having')) ?></span></label>
+        <div class="control">
+            <input type="text" name="having" id="having" title="<?= $block->escapeHtmlAttr(__('Having')) ?>" class="input-text" placeholder="<?= $block->escapeHtml(__('Any special having requirements')) ?>">
+        </div>
+    </div>
+    <div class="field products">
+        <label for="products" class="label"><span><?= $block->escapeHtml(__('Products')) ?></span></label>
+        <div class="control">
+            <textarea name="products" id="products" title="<?= $block->escapeHtmlAttr(__('Products')) ?>" class="input-text" placeholder="<?= $block->escapeHtml(__('Please list the products you would like to order')) ?>"></textarea>
+        </div>
+    </div>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" class="action submit primary" title="<?= $block->escapeHtmlAttr(__('Book Grocery')) ?>"><span><?= $block->escapeHtml(__('Book Grocery')) ?></span></button>
+        </div>
+    </div>
+    <?= $block->getBlockHtml('formkey') ?>
+</form>
+
+<?php /** @var \Naheed\BookGrocery\Block\BookGrocery $block */ ?>
+
+<table class="bookgrocery-table">
+    <thead>
+    <tr>
+        <th><?= __('ID') ?></th>
+        <th><?= __('Name') ?></th>
+        <th><?= __('Email') ?></th>
+        <th><?= __('Phone') ?></th>
+        <th><?= __('Products') ?></th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($block->getBookGroceryData() as $data): ?>
+        <tr>
+            <td><?= $data['id'] ?></td>
+            <td><?= $data['name'] ?></td>
+            <td><?= $data['email'] ?></td>
+            <td><?= $data['phone'] ?></td>
+            <td><?= $data['products'] ?></td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
