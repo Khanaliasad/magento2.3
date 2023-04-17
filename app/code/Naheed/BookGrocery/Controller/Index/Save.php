@@ -1,11 +1,12 @@
 <?php
+
 namespace Naheed\BookGrocery\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\Request\DataPersistorInterface;
-use Magento\Framework\Controller\ResultFactory;
-use Naheed\BookGrocery\Model\BookFactory;
+use Magento\Framework\Controller\DataFactory;
+use Naheed\BookGrocery\Model\BookGrocery;
 
 class Save extends \Magento\Framework\App\Action\Action
 {
@@ -20,12 +21,11 @@ class Save extends \Magento\Framework\App\Action\Action
      * @param \Magento\Framework\App\Action\Context $context
      */
     public function __construct(
-       \Magento\Framework\App\Action\Context $context,
-       \Magento\Framework\View\Result\PageFactory $pageFactory,
-       BookFactory $bookFactory,
-       DataPersistorInterface $dataPersistor
-    )
-    {
+        \Magento\Framework\App\Action\Context $context,
+        \Magento\Framework\View\Result\PageFactory $pageFactory,
+        BookGrocery $bookFactory,
+        DataPersistorInterface $dataPersistor
+    ) {
         $this->bookFactory = $bookFactory;
         $this->dataPersistor = $dataPersistor;
         $this->_pageFactory = $pageFactory;
@@ -38,7 +38,8 @@ class Save extends \Magento\Framework\App\Action\Action
      */
     public function execute()
     {
-        $post = $this->getRequest()->getPostValue();
+        $post = "placeholder for below";
+        //  $this->getRequest()->getPostValue();
 
         if (!$post) {
             $this->_redirect('*/*/index');
@@ -56,12 +57,8 @@ class Save extends \Magento\Framework\App\Action\Action
             $resultRedirect = $this->resultRedirectFactory->create();
             $resultRedirect->setPath('naheed1/success');
             return $resultRedirect;
-
-        }
-        catch(error){
+        } catch (error) {
             return $book = $this->bookFactory->create();
-
         }
     }
 }
-

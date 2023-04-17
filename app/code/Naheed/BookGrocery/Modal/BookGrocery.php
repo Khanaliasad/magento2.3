@@ -11,9 +11,6 @@ class BookGrocery extends AbstractModel
     {
 
         $this
-            ->_init(
-                \Naheed\BookGrocery\Model\ResourceModel\BookGrocery
-                ::class
-            );
+            ->_init("\Naheed\BookGrocery\Model\ResourceModel\BookGrocery" );
     }
 }

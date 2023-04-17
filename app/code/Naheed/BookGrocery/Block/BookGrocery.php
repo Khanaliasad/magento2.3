@@ -15,16 +15,16 @@ class BookGrocery extends Template
      * BookGrocery constructor.
      * @param Template\Context $context
      * @param array $data
-     * @param \Naheed\BookGrocery\Model\BookGroceryFactory $bookGroceryFactory
+    //  * @param \Naheed\BookGrocery\Model\BookGroceryFactory $bookGroceryFactory
      */
     public function __construct(
         Template\Context $context,
         \Magento\Customer\Model\Session $customerSession,
-        array $data = [],
-        \Naheed\BookGrocery\Model\BookGroceryFactory $bookGroceryFactory
+        array $data = []
+        // \Naheed\BookGrocery\Model\BookGroceryFactory $bookGroceryFactory
     ) {
         $this->customerSession = $customerSession;
-        $this->bookGroceryFactory = $bookGroceryFactory;
+        // $this->bookGroceryFactory = $bookGroceryFactory;
         parent::__construct($context, $data);
     }
 

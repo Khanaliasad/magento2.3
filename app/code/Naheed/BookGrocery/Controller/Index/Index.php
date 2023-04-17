@@ -29,10 +29,14 @@ class Index extends \Magento\Framework\App\Action\Action
 
     public function execute()
     {
+        $this->_view->loadLayout();
+        $this->_view->renderLayout();
         $request = $this->getRequest();
+        die(printf($request->getparam("name")));
         $resultPage = $this->resultPageFactory->create();
         $resultPage->addHandle('bookgrocery_index_index');
         $resultPage->getConfig()->getTitle()->set(__('Book Grocery'));
+        return $resultPage;
 
         if (!$this->formKeyValidator->validate($request) && !$request) {
             $this->messageManager->addError(__('Please fill in all required fields.'));

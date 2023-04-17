@@ -13,15 +13,16 @@ class View extends Template
 
     public function __construct(
         Template\Context $context,
-        CollectionFactory $bookCollectionFactory,
+        // CollectionFactory $bookCollectionFactory,
         array $data = []
     ) {
         parent::__construct($context, $data);
-        $this->bookCollectionFactory = $bookCollectionFactory;
+        // $this->bookCollectionFactory = $bookCollectionFactory;
     }
 
-    public function getBooks(): Collection
+    public function getBooks()
+    // : Collection
     {
-        return $this->bookCollectionFactory->create();
+        // return $this->bookCollectionFactory->create();
     }
 }

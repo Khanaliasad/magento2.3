@@ -1,16 +1,12 @@
 <?php
 
-namespace Naheed\BookGrocery\Model\ResourceModel\MyModel;
+namespace Naheed\BookGrocery\Modal\ResourceModel\BookGrocery;
 
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 
 class Collection extends AbstractCollection
 {
-    protected $_idFieldName = 'id';
-    protected $_eventPrefix = 'Naheed_BookGrocery_collection';
-    protected $_eventObject = 'BookGrocery_collection';
-
-    protected function _construct()
+    public function __construct()
     {
         $this->_init(
             'Naheed\BookGrocery\Model\BookGrocery',
