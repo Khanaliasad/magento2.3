@@ -46,19 +46,19 @@ class Save extends \Magento\Framework\App\Action\Action
             return;
         }
 
-        try {
+        // try {
             $book = $this->bookFactory->create();
             $book->setName($this->getRequest()->getParam('name'));
             $book->setEmail($this->getRequest()->getParam('email'));
             $book->setPhone($this->getRequest()->getParam('phone'));
             $book->setHaving($this->getRequest()->getParam('having'));
             $book->setProducts($this->getRequest()->getParam('products'));
-            $bookRepository->save($book);
+            // $bookRepository->save($book);
             $resultRedirect = $this->resultRedirectFactory->create();
             $resultRedirect->setPath('naheed1/success');
             return $resultRedirect;
-        } catch (error) {
+        // } catch (error) {
             return $book = $this->bookFactory->create();
-        }
+        // }
     }
 }

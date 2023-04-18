@@ -8,7 +8,7 @@ class BookGrocery extends \Magento\Framework\Model\AbstractModel implements
     \Naheed\Grocery\Api\Data\BookGroceryInterface,
     \Magento\Framework\DataObject\IdentityInterface
 {
-    const CACHE_TAG = 'naheed_grocery_bookgrocery';
+    const CACHE_TAG = 'bookgrocery';
 
     /**
      * Init
