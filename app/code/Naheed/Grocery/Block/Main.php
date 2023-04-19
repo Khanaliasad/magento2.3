@@ -25,8 +25,8 @@ class Main extends \Magento\Framework\View\Element\Template
         // ->setData('phone','13158648')
         // ->save();
         // var_dump('Done');
-        $todo = $todo->load(1);   
-        var_dump($todo->getData());
-        exit;
+        // $todo = $todo->load(1);   
+        // var_dump($todo->getData());
+        // exit;
     }
 }
