@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Naheed_Adminmenu::admin" title="adminmenuetitke" module="Naheed_Adminmenu" sortOrder="10" action="frontname/controller/action" resource="Naheed_Adminmenu::admin"/>
+    </menu>
+</config>
